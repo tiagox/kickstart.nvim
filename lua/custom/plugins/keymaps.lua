@@ -7,8 +7,9 @@ vim.api.nvim_create_autocmd("FileType", { pattern = "go", callback = function()
   -- Run go run on the current file
   vim.keymap.set("n", "<leader>gr", "<cmd>w<CR><cmd>!go run %<CR>", { desc = "Run current Go file" })
 
-  -- Format current file using gofmt / built-in LSP
-  vim.keymap.set("n", "<leader>gf", function()
-    vim.lsp.buf.format()
-  end, { desc = "Format Go file" })
+  -- -- -- Unnecessafy because enabling gopls and using `<leader>f` also works.
+  -- -- Format current file using gofmt / built-in LSP
+  -- vim.keymap.set("n", "<leader>gf", function()
+  --   vim.lsp.buf.format()
+  -- end, { desc = "Format Go file" })
 end })
